@@ -115,6 +115,8 @@ export class GameData {
     isGameOver(): boolean {
         // 有空格子？还能玩
         if (this.getEmptyCells().length > 0) return false;
+
+        this.grid.forEach(val => val.forEach(val_2 => {if(val_2.toString() == "2048"){ return false; console.log("游戏通关")}}))
         
         // 检查相邻相同数字
         for (let row = 0; row < this.size; row++) {
